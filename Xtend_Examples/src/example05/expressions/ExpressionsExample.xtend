@@ -1,5 +1,7 @@
 package example05.expressions
 
+import java.io.BufferedReader
+import java.io.IOException
 import org.eclipse.xtend.lib.annotations.Accessors
 
 class ExpressionsExample {
@@ -27,6 +29,14 @@ class ExpressionsExample {
 			case GREEN: new RGB(0, 255, 0)
 			case BLUE: new RGB(0, 0, 255)
 		}
+	}
+	
+	def void tryExpression(BufferedReader reader) {
+		println(try {
+			reader.readLine
+		} catch (IOException e) {
+			"Couldn't read line"
+		})
 	}
 	
 	// Default expression value
